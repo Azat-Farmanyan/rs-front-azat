@@ -1,0 +1,56 @@
+.board {
+  position: relative;
+  cursor: pointer;
+  min-width: 270px;
+
+  height: 105px;
+  border-radius: 5px;
+
+  // background-color: var(--yellow);
+  background-color: var(--main-blue);
+
+  // background-color: #fff;
+  // border: 1px solid var(--main-blue);
+  padding: 15px 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  transition: all 0.5s ease;
+  .title {
+    margin-bottom: 10px;
+    // color: var(--very-dark-blue);
+  }
+  .delete-board,
+  .open-board {
+    background-color: var(--light-gray);
+  }
+  p {
+    margin-bottom: 5px;
+  }
+  &:hover {
+    box-shadow: 5px 5px 5px rgba(0, 44, 85, 0.3);
+    // background-color: var(--main-blue);
+    background-color: var(--yellow);
+
+    .title,
+    .num-of-tasks {
+      color: var(--very-dark-blue);
+    }
+    .delete-board {
+      background-color: var(--red);
+      color: #fff;
+    }
+    .open-board {
+      background-color: var(--green);
+      color: #fff;
+    }
+  }
+  .board-buttons {
+    display: flex;
+    gap: 10px;
+    margin-top: 2px;
+  }
+  .delete-board {
+    max-width: 120px;
+  }
+}

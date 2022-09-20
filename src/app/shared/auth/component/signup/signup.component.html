@@ -1,0 +1,55 @@
+<section class='auth-block'>
+  <div class="content">
+    <form class="form" [formGroup]="signupForm" (ngSubmit)="signup()">
+      <h3 class='title'>{{'Sign-up' | translate}}</h3>
+
+
+
+      <div class="form-control">
+        <label class='subtitle'>{{'Name' | translate}}</label>
+        <input #nameInput formControlName='name' type="text" placeholder="{{'Name' | translate}}">
+        <div *ngIf="signupForm.get('name')?.invalid && signupForm.get('name')?.touched" class="validation">
+          <p *ngIf="signupForm.get('name')!.errors!.required">{{'name-required' | translate}}</p>
+          <p *ngIf="signupForm.get('name')!.errors!.minlength">
+            {{'login-length-text-1' | translate}} {{signupForm.get('name')!.errors!.minlength.requiredLength}}
+            {{'login-length-text-2' | translate}} {{signupForm.get('name')!.errors!.minlength.actualLength}}.
+          </p>
+        </div>
+      </div>
+
+      <div class="form-control">
+        <label class='subtitle'>{{'login2' | translate}}</label>
+        <input formControlName='login' type="text" placeholder="{{'login2' | translate}}">
+        <div *ngIf="signupForm.get('login')?.invalid && signupForm.get('login')?.touched" class="validation">
+          <p *ngIf="signupForm.get('login')!.errors!.required">{{'login-required' | translate}}</p>
+          <p *ngIf="signupForm.get('login')!.errors!.minlength">
+            {{'login-length-text-1' | translate}} {{signupForm.get('login')!.errors!.minlength.requiredLength}}
+            {{'login-length-text-2' | translate}} {{signupForm.get('login')!.errors!.minlength.actualLength}}.
+          </p>
+        </div>
+      </div>
+
+      <div class="form-control">
+        <label class='subtitle'>{{'Password' | translate}}</label>
+        <input formControlName='password' type="password" placeholder="{{'Password' | translate}}">
+        <div *ngIf="signupForm.get('password')?.invalid && signupForm.get('password')?.touched" class="validation">
+          <p *ngIf="signupForm.get('password')!.errors!.required">{{'password-required' | translate}}</p>
+          <p *ngIf="signupForm.get('password')!.errors!.minlength">
+            {{'login-length-text-1' | translate}} {{signupForm.get('password')!.errors!.minlength.requiredLength}}
+            {{'login-length-text-2' | translate}} {{signupForm.get('password')!.errors!.minlength.actualLength}}.
+          </p>
+        </div>
+      </div>
+      <div class="submit-block">
+        <button [ngClass]="{
+          'gray': signupForm.invalid
+        }" [disabled]="signupForm.invalid" class="btn orange" type="submit">{{'Sign-up' | translate}}</button>
+        <div class="dont-have-account">
+          <p class=' subtitle'>{{'have-an-account' | translate}}</p>
+          <button type="button" [routerLink]="['/signin']" class="subtitle orange-title main-blue"><b>{{'login' |
+              translate}}</b></button>
+        </div>
+      </div>
+    </form>
+  </div>
+</section>

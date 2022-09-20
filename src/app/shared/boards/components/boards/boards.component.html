@@ -1,0 +1,44 @@
+<section class='auth-block board'>
+  <div class="content">
+    <div class="board-body">
+      <div class='board-page-title'>
+        <img src="../../../../../assets/icons/ic_outline-developer-board.png" alt="board icon">
+        <h3 class='title blue-title board-title'>{{'Your-boards'|translate}}
+        </h3>
+      </div>
+
+      <h3 *ngIf="boardsService.loading;else content" class='btn subtitle blue'>{{'Loading'|translate}}</h3>
+      <ng-template #content>
+        <div class="search-block">
+          <input class='search-input' type="text" placeholder="{{'search'|translate}}" [(ngModel)]="searchWord">
+          <button (click)="clearInput()" class='btn clear-input green green-title'>X</button>
+        </div>
+
+        <div *ngIf="isAuthenticated; else boardsNotAvailable" class="boards-block">
+          <app-board *ngFor="let board of boards | filter:searchWord" [board]="board"></app-board>
+
+          <div class="create-board-block" (click)="createNewBoardModal=true">
+            <button class='create-board orange-title'>
+              <b>{{'Create-new-Board'|translate}}</b>
+            </button>
+          </div>
+
+        </div>
+        <ng-template #boardsNotAvailable>
+          <div class="boards-not-available">
+            <h3 class='subtitle red-title not-avialable'>
+              <b>{{'Boards-is-not-available'|translate}}</b>
+            </h3>
+            <div class="login-signup-buttons">
+              <button (click)="router.navigate(['/signin'])" class='btn'>{{'login'|translate}}</button>
+              <button (click)="router.navigate(['/signup'])" class='btn orange'>{{'Sign-up'|translate}}</button>
+            </div>
+          </div>
+        </ng-template>
+      </ng-template>
+    </div>
+  </div>
+  <app-create-board-form *ngIf="createNewBoardModal" (onSubmit)="closeCreateNewBoardModal($event)"
+    (onCancel)="closeCreateNewBoardModal($event)">
+  </app-create-board-form>
+</section>

@@ -1,0 +1,23 @@
+<div class="modal-background">
+  <div class="content">
+    <form [formGroup]="newBoardForm" (ngSubmit)="createNewBoard()">
+      <div class="modal-block create-new-board">
+
+        <h3 class='title'>{{'Create-new-Board-not-plus'|translate}}</h3>
+        <div class="title-input">
+          <input formControlName='title' type="text" placeholder="{{'Title'|translate}}">
+          <div *ngIf="newBoardForm.get('title')?.invalid && newBoardForm.get('title')?.touched" class="validation">
+            <p *ngIf="newBoardForm.get('title')!.errors!.required">{{'title-is-required'|translate}}</p>
+          </div>
+        </div>
+        <div class='buttons-block'>
+          <button type='button' (click)="cancel()"
+            class='yellow btn very-dark-blue-title'>{{'Cancel'|translate}}</button>
+          <button type='submit' [ngClass]="{
+            'gray': newBoardForm.invalid
+          }" [disabled]="newBoardForm.invalid" class='green btn'>{{'Create'|translate}}</button>
+        </div>
+      </div>
+    </form>
+  </div>
+</div>

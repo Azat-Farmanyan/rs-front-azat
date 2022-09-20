@@ -1,0 +1,67 @@
+.board-page-title {
+  display: flex;
+  // flex-direction: column;
+  align-items: center;
+  .board-title {
+    margin: 0 0 0 10px;
+    font-size: 26px;
+  }
+  margin-bottom: 30px;
+}
+.board {
+  padding: 60px 0;
+}
+.not-avialable {
+  text-align: justify;
+  margin-bottom: 15px;
+}
+.login-signup-buttons {
+  display: flex;
+  gap: 0 10px;
+}
+//------
+
+.boards-block {
+  display: flex;
+  justify-content: space-evenly;
+
+  align-items: center;
+  // align-content: space-around;
+  gap: 25px;
+  flex-wrap: wrap;
+  flex-shrink: 3;
+}
+
+.create-board-block {
+  border: 1px solid var(--light-blue);
+
+  position: relative;
+  cursor: pointer;
+  width: 270px;
+  height: 105px;
+  // background-color: var(--yellow);
+  background-color: #fff;
+  border-radius: 5px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.5s ease;
+  &:hover {
+    box-shadow: 0px 4px 4px rgba(84, 193, 237, 0.25);
+  }
+  .create-board {
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 123.18%;
+    // color: var(--dark-blue);
+    color: var(--light-blue);
+    transition: all 0.5s ease;
+    background-color: #fff;
+  }
+  &:hover {
+    filter: brightness(1.1);
+    .create-board {
+      color: var(--dark-blue);
+    }
+  }
+}

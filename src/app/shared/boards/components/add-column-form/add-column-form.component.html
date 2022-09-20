@@ -1,0 +1,22 @@
+<div class="modal-background">
+  <div class="content">
+    <form [formGroup]="newColumnForm" (ngSubmit)="createNewTask()">
+      <div class="modal-block create-new-board">
+        <h3 class='title'>{{'Create-new-Column' | translate}}</h3>
+        <div class="title-input">
+          <input formControlName='title' type="text" placeholder="{{'Title' | translate}}">
+          <div *ngIf="newColumnForm.get('title')?.invalid && newColumnForm.get('title')?.touched" class="validation">
+            <p *ngIf="newColumnForm.get('title')!.errors!.required">{{'title-is-required' | translate}}</p>
+          </div>
+        </div>
+        <div class='buttons-block'>
+          <button type='button' (click)="cancel()" class='yellow btn very-dark-blue-title'>{{'Cancel' |
+            translate}}</button>
+          <button type='submit' [ngClass]="{
+            'gray': newColumnForm.invalid
+          }" [disabled]="newColumnForm.invalid" class='green btn'>{{'Create' | translate}}</button>
+        </div>
+      </div>
+    </form>
+  </div>
+</div>

@@ -1,0 +1,42 @@
+<section class='auth-block'>
+  <div class="content">
+    <form class="form green" [formGroup]="signinForm" (ngSubmit)="login()">
+      <h3 class='title'>{{'login' | translate}}</h3>
+
+      <div class="form-control">
+        <label class='subtitle'>{{'login2' | translate}}</label>
+        <input #loginInput formControlName='login' type="text" placeholder="{{'login2' | translate}}">
+        <div *ngIf="signinForm.get('login')?.invalid && signinForm.get('login')?.touched" class=" validation">
+          <p *ngIf="signinForm.get('login')!.errors!.required">{{'login-required' | translate}}</p>
+          <p *ngIf="signinForm.get('login')!.errors!.minlength">
+            {{'login-length-text-1' | translate}} {{signinForm.get('login')!.errors!.minlength.requiredLength}}
+            {{'login-length-text-2' | translate}} {{signinForm.get('login')!.errors!.minlength.actualLength}}.
+          </p>
+        </div>
+      </div>
+
+      <div class="form-control">
+        <label class='subtitle'>{{'Password' | translate}}</label>
+        <input formControlName='password' type="password" placeholder="{{'Password' | translate}}">
+        <div *ngIf="signinForm.get('password')?.invalid && signinForm.get('password')?.touched" class=" validation">
+          <p *ngIf="signinForm.get('password')!.errors!.required">{{'password-required' | translate}}</p>
+          <p *ngIf="signinForm.get('password')!.errors!.minlength">
+            {{'login-length-text-1' | translate}} {{signinForm.get('password')!.errors!.minlength.requiredLength}}
+            {{'login-length-text-2' | translate}} {{signinForm.get('password')!.errors!.minlength.actualLength}}.
+          </p>
+        </div>
+      </div>
+      <div class="submit-block">
+
+        <button class="btn orange" [ngClass]="{
+          'gray': signinForm.invalid
+        }" [disabled]="signinForm.invalid" type="submit"> {{'login' | translate}} </button>
+        <div class="dont-have-account">
+          <p class='subtitle'>{{'dont-have-an-account' | translate}}</p>
+          <button type="button" [routerLink]="['/signup']" class="subtitle orange-title main-blue">
+            <b>{{'Sign-up' | translate}}</b></button>
+        </div>
+      </div>
+    </form>
+  </div>
+</section>

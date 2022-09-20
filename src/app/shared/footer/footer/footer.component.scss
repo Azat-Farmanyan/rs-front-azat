@@ -1,0 +1,25 @@
+footer {
+  background: var(--yellow);
+}
+.footer-body {
+  display: flex;
+  flex-wrap: wrap-reverse;
+  align-items: center;
+  justify-content: space-between;
+}
+.course-logo {
+  width: 105px;
+  height: 44px;
+  background: url("../../../../assets/icons/rsSchool-black-logo1.png") no-repeat;
+}
+.copyright {
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 123.18%;
+  color: #000000;
+}
+.github-logo {
+  width: 111px;
+  height: 62px;
+  background: url("../../../../assets/icons/GitHub-Emblem\ 1.png") no-repeat;
+}

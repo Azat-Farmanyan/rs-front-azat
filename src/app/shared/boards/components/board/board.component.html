@@ -1,0 +1,19 @@
+<div class="board">
+  <h3 class='title'>{{board.title | titlecase}}</h3>
+  <!-- <h3 class='blue'>
+    <small>
+      <pre>{{board | json}}</pre>
+    </small>
+  </h3> -->
+
+  <!-- <p *ngIf="board.description" class='very-dark-blue-title num-of-tasks'><b>{{board.description | maxwidth:30}}</b> </p> -->
+  <!-- <p class='very-dark-blue-title num-of-tasks'>Number of tasks: <b>{{board.numOfTasks}}</b> </p> -->
+  <div class="board-buttons">
+    <button title='Click to open' class='small-btn very-dark-blue-title open-board'
+      [routerLink]="['/boards/', board._id]">{{'Open'| translate}}</button>
+    <button title='Click to delete' (click)="deleteBoardModal=true" class='small-btn red-title delete-board'>{{'Delete'|
+      translate}}</button>
+  </div>
+</div>
+<app-delete-board [currentBoardID]="board._id" (onCancel)="cancelDelete($event)" *ngIf="deleteBoardModal">
+</app-delete-board>

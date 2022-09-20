@@ -1,0 +1,59 @@
+<div class="auth-block">
+  <div class="content" *ngIf="isAuthenticated;else tasksNotAvailable">
+    <div class="column-bage-buttons">
+      <button [routerLink]="['/boards']" class='btn orange back-to-main'>
+        <img src="../../../../../assets/icons/ic_sharp-arrow-back-ios.png" alt="back icon">
+        <p>{{'Back-to-boards'|translate}}</p>
+      </button>
+      <button (click)="showAddColumnModal()" class='btn green back-to-main'>
+        <img src="../../../../../assets/icons/carbon_add.png" alt="back icon">
+        <p>{{'Add-column'|translate}}</p>
+      </button>
+    </div>
+
+    <div class="task-body">
+      <h3 class='tasks-page-title title blue-title'>{{'Board'|translate}}:<span class='orange-title'>
+          {{currentBoardTitle |
+          titlecase}}</span></h3>
+
+      <h3 *ngIf="boardsService.loading;else content" class='btn subtitle orange'>{{'Loading'|translate}}</h3>
+      <ng-template #content>
+        <div class="search-block">
+          <input class='search-input' type="text" placeholder="{{'search-by-column-title'|translate}}"
+            [(ngModel)]="searchWord">
+          <button (click)="clearInput()" class='btn clear-input green green-title'>X</button>
+        </div>
+        <div *ngIf="columns.length>0;else emptyBoard" class="tasks">
+          <!--  render columns -->
+          <app-task *ngFor="let column of columns | filter:searchWord" [column]="column"
+            [currentBoardId]="currentBoardId">
+          </app-task>
+
+        </div>
+        <ng-template #emptyBoard>
+          <h3 class='subtitle blue-title'><span class='red-title'> {{'Board-is-empty'|translate}}</span>
+            {{'Board-is-empty-text'|translate}}
+          </h3>
+        </ng-template>
+
+      </ng-template>
+    </div>
+  </div>
+
+  <ng-template #tasksNotAvailable>
+    <div class="boards-not-available">
+      <h3 class='subtitle red-title not-avialable'>
+        <b>
+          {{'Tasks-are-not-available'|translate}}
+        </b>
+      </h3>
+      <div class="login-signup-buttons">
+        <button (click)="router.navigate(['/signin'])" class='btn'> {{'login'|translate}}</button>
+        <button (click)="router.navigate(['/signup'])" class='btn orange'>{{'Sign-up'|translate}}</button>
+      </div>
+    </div>
+  </ng-template>
+</div>
+
+<app-add-column-form [currentBoardId]="currentBoardId" (onSubmit)="closeAddNewColumnModal($event)"
+  (onCancel)="closeAddNewColumnModal($event)" *ngIf="showAddNewColumnModal"></app-add-column-form>

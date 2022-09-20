@@ -1,0 +1,335 @@
+@charset "UTF-8";
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&display=swap");
+@import "~ngx-toastr/toastr";
+* {
+  padding: 0;
+  margin: 0;
+  border: 0;
+}
+
+*,
+*:before,
+*:after {
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+:focus,
+:active {
+  outline: none;
+}
+
+a:focus,
+a:active {
+  outline: none;
+}
+
+nav,
+footer,
+header,
+aside {
+  display: block;
+}
+
+html,
+body {
+  height: 100%;
+  width: 100%;
+  font-size: 100%;
+  line-height: 1;
+  font-size: 14px;
+  -ms-text-size-adjust: 100%;
+  -moz-text-size-adjust: 100%;
+  -webkit-text-size-adjust: 100%;
+}
+
+input,
+button,
+textarea {
+  font-family: inherit;
+}
+
+input::-ms-clear {
+  display: none;
+}
+
+button {
+  cursor: pointer;
+}
+
+button::-moz-focus-inner {
+  padding: 0;
+  border: 0;
+}
+
+a,
+a:visited {
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: none;
+}
+
+ul li {
+  list-style: none;
+}
+
+img {
+  vertical-align: top;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-size: inherit;
+  font-weight: inherit;
+}
+//---------------
+body {
+  font-family: "Open Sans", sans-serif;
+}
+
+.content {
+  max-width: 1193px;
+  margin: 0 auto;
+  padding: 0 15px;
+}
+
+:root {
+  --very-dark-blue: #18437c;
+  --dark-blue: #00799e;
+  --main-blue: #17afde;
+  --light-blue: #54c1ed;
+  --orange: #f4644d;
+  --yellow: #f9d36b;
+  --green: #8bc932;
+  --light-gray: #f3fcff;
+  --red: #de2f17;
+  --modal-background: rgba(0, 0, 0, 0.4);
+}
+.btn {
+  background: var(--main-blue);
+  color: #fff;
+  border-radius: 3px;
+  padding: 7px 15px;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 123.18%;
+  transition: all 0.5s ease;
+}
+.btn:hover {
+  filter: brightness(1.2);
+}
+.small-btn {
+  background: var(--main-blue);
+  color: #fff;
+  border-radius: 3px;
+  padding: 5px 20px;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 123.18%;
+  transition: all 0.5s ease;
+}
+.small-btn:hover {
+  filter: brightness(1.2);
+}
+.title {
+  font-weight: 700;
+  font-size: 22px;
+  line-height: 123.18%;
+  text-align: center;
+  margin-bottom: 15px;
+  color: var(--light-gray);
+
+  transition: all 0.5s ease;
+}
+.subtitle {
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 123.18%;
+  text-align: center;
+  color: var(--light-gray);
+}
+.orange {
+  background-color: var(--orange);
+}
+.red {
+  background-color: var(--red);
+}
+.yellow {
+  background-color: var(--yellow);
+}
+.green {
+  background-color: var(--green);
+}
+.blue {
+  background-color: var(--light-blue);
+}
+.main-blue {
+  background-color: var(--main-blue);
+}
+.light-blue {
+  background-color: var(--light-blue);
+}
+.dark-blue {
+  background-color: var(--very-dark-blue);
+}
+.gray {
+  background-color: #acacac;
+}
+.light-gray {
+  background-color: var(--light-gray);
+}
+
+.orange-title {
+  color: var(--orange);
+}
+.red-title {
+  color: var(--red);
+}
+.yellow-title {
+  color: var(--yellow);
+}
+.green-title {
+  color: var(--green);
+}
+.blue-title {
+  color: var(--main-blue);
+}
+.very-dark-blue-title {
+  color: var(--very-dark-blue);
+}
+.auth-block {
+  background-color: var(--light-gray);
+  padding: 60px 0;
+  min-height: 90%;
+  @media only screen and (max-width: 576px) {
+    padding: 40px 0;
+  }
+}
+.form {
+  background-color: var(--main-blue);
+  max-width: 465px;
+  padding: 35px 35px 10px 35px;
+  margin: 0 auto;
+  border-radius: 5px;
+  transition: all 0.5s ease;
+  &:hover {
+    box-shadow: 7px 7px 5px rgba(84, 193, 237, 0.25);
+  }
+}
+.form-control {
+  margin: 5px 0 10px;
+}
+label {
+  text-align: left;
+  margin-left: 14px;
+  margin-bottom: 5px;
+  display: inline-block;
+}
+input {
+  display: block;
+  width: 100%;
+  background: #ffffff;
+  color: var(--dark-blue);
+  border-radius: 5px;
+  padding: 15px;
+  font-size: 16px;
+  &:focus {
+    outline: 3px solid var(--yellow);
+  }
+  &.ng-invalid.ng-touched {
+    outline: 3px solid var(--red);
+  }
+  &.ng-valid.ng-touched {
+    outline: 3px solid var(--green);
+  }
+}
+
+.validation p {
+  color: #de2f17;
+  // color: black;
+  text-align: left;
+  margin-left: 10px;
+  margin-top: 10px;
+  font-weight: 800;
+  font-style: italic;
+  & ::before {
+    content: "555";
+  }
+}
+
+.submit-block {
+  margin: 20px auto;
+  display: flex;
+  flex-direction: column;
+  & p {
+    margin: 10px 0;
+  }
+  .dont-have-account {
+    display: flex;
+    flex-direction: column;
+  }
+}
+
+.modal-background {
+  background-color: var(--modal-background);
+  position: fixed;
+  z-index: 100;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.modal-block {
+  max-width: 330px;
+  background-color: var(--light-blue);
+  padding: 30px 40px;
+  box-shadow: 0px 4px 4px rgba(84, 193, 237, 0.25);
+  border-radius: 5px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 25px;
+  .buttons-block {
+    display: flex;
+    gap: 15px;
+  }
+  margin: 180px auto 0;
+}
+.column:hover {
+  .task {
+    background-color: var(--dark-blue);
+    color: var(--blue);
+  }
+}
+.search-block {
+  display: flex;
+  max-height: 40px;
+  margin-bottom: 15px;
+  gap: 15px;
+  position: relative;
+  .search-input {
+    border: 1px solid var(--green);
+    &:focus {
+      border: 2px solid var(--green);
+    }
+    &.ng-invalid.ng-touched {
+      outline: none;
+    }
+    &.ng-valid.ng-touched {
+      outline: none;
+    }
+  }
+  .clear-input {
+    color: #fff;
+    height: 40px;
+    position: absolute;
+    right: 0;
+  }
+}

@@ -1,0 +1,178 @@
+.welcome {
+  background-color: var(--light-gray);
+}
+.welcome-body {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap-reverse;
+  justify-content: center;
+  min-height: 527px;
+  padding: 60px 0;
+  @media screen and (max-width: 600px) {
+    & {
+      padding: 10px 0 30px;
+    }
+  }
+}
+.welcome-leftside {
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+  button {
+    min-width: 250px;
+  }
+}
+.big-title {
+  font-weight: 700;
+  font-size: 34px;
+  line-height: 123.18%;
+  /* or 42px */
+
+  color: #17afde;
+  max-width: 451px;
+}
+.subtitle-welcome {
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 123.18%;
+  color: #54c1ed;
+  max-width: 300px;
+}
+.btn {
+  max-width: 205px;
+}
+.welcome-rightside {
+  width: 631px;
+  height: 314px;
+  background: url("../../../assets/images/peopleGroup\ 1.png") center/contain no-repeat;
+}
+@media screen and (max-width: 600px) {
+  .big-title {
+    font-size: 26px;
+  }
+}
+.about {
+  background-color: var(--main-blue);
+  width: 100%;
+}
+.about-body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 60px;
+}
+
+.about-subtitle {
+  max-width: 784px;
+}
+.orange-title {
+  color: var(--orange);
+}
+.our-benefits {
+  background-color: var(--light-gray);
+  padding: 60px;
+  width: 100%;
+}
+.benefit {
+  padding: 30px;
+  margin: 20px 10px;
+  transition: all 0.5s ease;
+}
+.benefit:hover {
+  filter: brightness(1.05);
+}
+.benefit-1 {
+  max-width: 215px;
+}
+.benefit-2 {
+  min-width: 334px;
+}
+.benefit-3 {
+  min-width: 334px;
+}
+.benefit-4 {
+  max-width: 465px;
+}
+
+.benefits-block {
+  display: flex;
+  // flex-wrap: wrap;
+}
+@media screen and (max-width: 1000px) {
+  .benefits-block {
+    flex-wrap: wrap;
+  }
+  .benefit-1,
+  .benefit-2,
+  .benefit-3,
+  .benefit-4 {
+    min-width: 100%;
+  }
+}
+
+// rsschool
+.rsschool {
+  background-color: var(--main-blue);
+  padding: 60px;
+}
+.rsschool-body {
+  font-size: 16px;
+  line-height: 123.18%;
+  color: #ffffff;
+  & span {
+    font-weight: 700;
+    font-size: 16px;
+    margin: 10px 0px;
+    display: inline-block;
+  }
+}
+.rsschool-textbox {
+  display: flex;
+  justify-content: space-between;
+  gap: 30px;
+  @media screen and (max-width: 650px) {
+    display: block;
+  }
+}
+
+// about developer
+.developer {
+  background-color: var(--light-gray);
+}
+.developer-body {
+  max-width: 791px;
+  margin: 0 auto;
+  padding: 60px 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.developer-content {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 20px;
+
+  @media screen and (max-width: 550px) {
+    display: block;
+    .dev-avatar {
+      margin-bottom: 20px;
+    }
+  }
+}
+.developer-title {
+  max-width: 345px;
+  text-align: center;
+}
+.about-dev {
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 123.18%;
+  color: var(--main-blue);
+  max-width: 583px;
+}
+.dev-avatar {
+  min-width: 170px;
+  height: 170px;
+  background: url("../../../assets/images/developer-avatar.png") center/auto no-repeat;
+}

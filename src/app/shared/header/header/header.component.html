@@ -1,0 +1,115 @@
+<header class='header'>
+  <div class="content">
+    <div *ngIf="!canOpenBurger;else burgerBlock" class="header-body">
+      <div class="logo-block">
+        <a class="page-logo" [routerLink]="['/']"></a>
+        <a class='page-title' [routerLink]="['/']">
+          {{'Sitetitle' | translate}}
+        </a>
+      </div>
+      <div class="nav">
+        <a class='nav-item' [routerLinkActiveOptions]="{exact:true}" [routerLink]="['/']"
+          routerLinkActive="active">{{'Nav-main' | translate}}</a>
+        <a (click)="checkIsAuthinticated()" class='nav-item' routerLinkActive="active"
+          [routerLinkActiveOptions]="{exact:true}" [routerLink]="['/boards']">{{'Nav-boards' | translate}}</a>
+
+        <div class="auth-buttons" *ngIf="authService.isAuthenticated();else authButtons">
+          <button class='loggedin btn green'>
+            <img src='../../../../assets/icons/el_ok.png' alt='okicon'>
+            <p>{{'login-information' | translate}}</p>
+          </button>
+          <button (click)="authService.logout()" class='logout btn red'>
+            <img src='../../../../assets/icons/ic_twotone-logout.png' alt='okicon'>
+            <p>{{'Log-out' | translate}}</p>
+          </button>
+        </div>
+
+        <ng-template #authButtons>
+          <div class="auth-buttons">
+            <button class='loggedin btn green' [routerLink]="['/signin']">
+              <img src='../../../../assets/icons/ic_twotone-logout.png' alt='ok icon'>
+              <p>{{'login' | translate}}</p>
+            </button>
+            <button class='logout btn orange' [routerLink]="['/signup']">
+              <img src="../../../../assets/icons/add-user.png" alt="add user icon">
+              <p>{{'Sign-up' | translate}}</p>
+            </button>
+          </div>
+        </ng-template>
+
+        <div class="toggle">
+          <button (click)="switchLang('en')" [ngClass]="{
+            'active-toggle': language==='en'
+          }" class='btn toggle-btn'>EN</button>
+
+          <button (click)="switchLang('ru')" [ngClass]="{
+            'active-toggle': language==='ru'
+          }" class='btn toggle-btn'>RU</button>
+        </div>
+
+      </div>
+    </div>
+
+    <ng-template #burgerBlock>
+      <div class="nav-logo-bock">
+        <div class="logo-block">
+          <a class="page-logo" [routerLink]="['/']"></a>
+          <a class='page-title' [routerLink]="['/']">{{'Sitetitle' | translate}}</a>
+        </div>
+        <div class="burger-icon" [ngClass]="{
+          'burger-open-icon': !burgerIsOpen,
+          'burger-close-icon': burgerIsOpen
+        }" (click)="burgerIsOpen=!burgerIsOpen"></div>
+      </div>
+
+      <div *ngIf="burgerIsOpen" class="burger-nav">
+        <div class='language-auth'>
+          <div class="auth-buttons" *ngIf="isAuthenticated();else authButtons">
+
+            <button class='loggedin btn green'>
+              <img src='../../../../assets/icons/el_ok.png' alt='okicon'>
+              <p>{{'login-information' | translate}}</p>
+            </button>
+            <button (click)="authService.logout()" class='logout btn red'>
+              <img src='../../../../assets/icons/ic_twotone-logout.png' alt='okicon'>
+              <p>{{'Log-out' | translate}}</p>
+            </button>
+
+          </div>
+
+          <ng-template #authButtons>
+            <div class="auth-buttons">
+              <button class='loggedin btn green' [routerLink]="['/signin']">
+                <img src='../../../../assets/icons/ic_twotone-logout.png' alt='ok icon'>
+                <p>{{'login' | translate}}</p>
+              </button>
+              <button class='logout btn orange' [routerLink]="['/signup']">
+                <img src="../../../../assets/icons/add-user.png" alt="add user icon">
+                <p>{{'Sign-up' | translate}}</p>
+              </button>
+            </div>
+          </ng-template>
+
+          <div class="toggle">
+            <button (click)="switchLang('en')" [ngClass]="{
+            'active-toggle': language==='en'
+          }" class='btn toggle-btn'>EN</button>
+
+            <button (click)="switchLang('ru')" [ngClass]="{
+            'active-toggle': language==='ru'
+          }" class='btn toggle-btn'>RU</button>
+          </div>
+        </div>
+
+
+        <ul class='burger-nav-items'>
+          <li><a class='nav-item' [routerLinkActiveOptions]="{exact:true}" [routerLink]="['/']"
+              routerLinkActive="active">{{'Nav-main' | translate}}</a></li>
+          <li><a class='nav-item' [routerLinkActiveOptions]="{exact:true}" [routerLink]="['/boards']"
+              routerLinkActive="active">{{'Nav-boards' | translate}}</a></li>
+        </ul>
+      </div>
+
+    </ng-template>
+  </div>
+</header>

@@ -1,0 +1,29 @@
+<div class="column">
+  <div class="column-title-block">
+    <div class="column-title title gray-title">{{column.title | maxwidth:18}} </div>
+    <button class='options' (click)="options=!options"><img
+        src=" ../../../../../assets/icons/simple-line-icons_options-vertical.png" alt="options icon"></button>
+
+    <div *ngIf="options" class="options-block">
+      <p (click)="deleteColumn()" class='subtitle delete-column'>{{'Delete-column'|translate}}</p>
+    </div>
+  </div>
+  <div class="column-body">
+
+    <div class="tasks-block">
+      <app-each-task *ngFor="let eachtask of tasks" [task]="eachtask" [columnId]="column._id"
+        (onDelete)="deleteTask($event)"></app-each-task>
+
+      <button (click)=" showAddTaskModal()" class="btn light-gray very-dark-blue-title subtitle add-new-task">
+        {{'Add-new-Task'|translate}}
+      </button>
+    </div>
+  </div>
+</div>
+
+<app-add-new-task-form *ngIf="showAddTask" [currentColumnId]='column._id' [currentBoardId]="currentBoardId"
+  (onSubmit)="closeAddTaskModal($event)" (onCancel)="closeAddTaskModal($event)" (onCreate)="addNewtask($event)">
+</app-add-new-task-form>
+<app-delete-column [currentColumnID]="column._id" [currentBoardID]="currentBoardId" (onCancel)="cancel($event)"
+  *ngIf="showDeleteColumnModal">
+</app-delete-column>

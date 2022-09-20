@@ -1,0 +1,87 @@
+{
+  "Sitetitle": "Project Management System",
+  "Nav-main": "Main",
+  "Nav-boards": "Your boards",
+  "login-information": "You are logged in",
+  "login": "Log in",
+  "login2": "Log in",
+
+  "Sign-up": "Sign up",
+  "Log-out": "Log out",
+  "Name": "Name",
+  "Password": "Password",
+  "have-an-account": "Already have an account?",
+  "dont-have-an-account": "Don't have an account?",
+
+  "Welcome-title": "Our Project Management application is the success of your team's work.",
+  "Welcome-subtitle": "Our team brings you the development tool used by agile teams",
+  "Welcome-button-create-board": "CREATE NEW BOARD",
+
+  "proj-men-sys-title": "What is a Project Management System",
+  "proj-men-sys-text": "A project management system is an agile project management tool designed to help visualize work, limit work-in-progress, and maximize efficiency (or flow). It can help both agile and DevOps teams establish order in their daily work. Kanban boards use cards, columns, and continuous improvement to help technology and service teams commit to the right amount of work, and get it done!",
+
+  "benefits-block-title": "Our Benefits",
+  "benefit-title-flexible": "Flexible work environment",
+  "benefit-text-flexible": "Tracker is a convenient solution for businesses of all sizes, with a universal approach right for any industry.",
+
+  "benefit-title-fault-tolerance": "Fault tolerance",
+  "benefit-text-fault-tolerance": "Tracker is designed to handle heavy workloads.",
+
+  "benefit-title-manage-team": "Manage team and track progress",
+  "benefit-text-manage-team": "Our project planning software has best features as well as features of the team management software.",
+
+  "benefit-title-automatic": "Automatic online project scheduling",
+  "benefit-text-automatic": "To make project management even easier, we let our users prioritize tasks, indent and outdent, set dependencies in one click, durations and progress right on a chart online by dragging and dropping tasks and their attributes.  ",
+
+  "rs-school-block-title": "About RS School",
+  "about-rs-school-1": "Is free-of-charge and community-based education program conducted by The Rolling Scopes developer community since 2013.",
+  "about-rs-school-2": "Everyone can study at RS School, regardless of age, professional employment, or place of residence.",
+  "about-rs-school-3": "The mentors and trainers of our school are front-end and javascript developers from different companies and countries.",
+  "Open-Source-title": "Open Source Philosophy",
+  "Open-Source-text": "Our platform and education materials are publicly available on GitHub and YouTube.",
+  "Teach-It-title": "“Teach It Forward”",
+  "Teach-It-text": "“According to this principle, students study at school for free, but we request that they return as mentors to pass on their knowledge to the next generation of students.”",
+
+  "about-developer": "About the developer who created this site",
+  "about-developer-text-1": "Hello, my name is Azat Farmanyan. I am an Armenian who lives in Georgia. I study at Samtskhe-Javakheti State University - Faculty of Engineering, Agricultural and Natural Sciences.",
+  "about-developer-text-2": "My goal is to learn everything new and exciting. I love code and coffee. I love spend a lot of time doing what interests me. My core strengths are in problem solving and fast learning. I want to get knowledge and skills that will be enough for employment in a company.",
+
+  "login-required": "Login is required",
+  "login-length-text-1": "The length must be at least",
+  "login-length-text-2": "characters. Now the number of characters is",
+
+  "password-required": "Password is required",
+  "name-required": "Name is required",
+
+  "Title": "Title",
+  "Create-new-Column": "Create new Column",
+  "Create-new-Task": "Create new Task",
+  "Add-new-Task": "+ Add new task",
+
+  "Your-boards": "Your boards",
+  "Create-new-Board": "+ Create new board",
+  "Create-new-Board-not-plus": "Create new board",
+
+  "title-is-required": "Title is required",
+  "Cancel": "Cancel",
+  "Create": "Create",
+  "Open": "Open",
+  "Delete": "Delete",
+  "Delete-column": "Delete column",
+
+  "Boards-is-not-available": "* Boards is not available because you are not logged in. Log in or register by clicking on the link.",
+  "Delete-board-text": "Do you really want to DELETE this board?",
+  "Delete-column-text": "Do you really want to DELETE this column?",
+
+  "Back-to-boards": "Back to boards",
+  "Add-column": "Add column",
+  "Loading": "Loading...",
+  "Board": "Board",
+  "Board-is-empty": "Board is empty!",
+  "Board-is-empty-text": "You can create columns by clicking on the button '+Add column'",
+  "Tasks-are-not-available": "* Tasks are not available because you have been logged out. Log in or register by clicking on the link.",
+
+  "Edit-profile": "Edit profile",
+  "search": "Search",
+  "search-by-column-title": "Search by column title"
+}

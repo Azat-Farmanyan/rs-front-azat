@@ -1,0 +1,30 @@
+.error-body {
+  width: 220px;
+  min-height: 80%;
+  padding: 160px 0;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.error-404 {
+  font-weight: 700;
+  font-size: 128px;
+  line-height: 100.18%;
+  /* identical to box height, or 158px */
+
+  text-align: center;
+
+  color: #f4644d;
+}
+.error-subtitle {
+  font-weight: 700;
+  font-size: 20px;
+  line-height: 123.18%;
+  /* identical to box height, or 25px */
+
+  text-align: center;
+
+  color: #f4644d;
+  margin-bottom: 20px;
+}

@@ -1,0 +1,106 @@
+.toggle-btn {
+  padding: 5px 8px;
+}
+.active-toggle {
+  background-color: var(--very-dark-blue);
+}
+//auth buttons
+
+.auth-buttons {
+  display: flex;
+  gap: 10px;
+}
+
+// ----- end of language toogle
+
+header {
+  background-color: var(--main-blue);
+}
+.header-body {
+  display: flex;
+  justify-content: space-between;
+  padding: 15px 0;
+}
+.logo-block {
+  display: flex;
+  align-items: center;
+}
+.page-logo {
+  cursor: pointer;
+  min-width: 49px;
+  height: 49px;
+  background: url("../../../../assets/icons/project-management.ico") no-repeat;
+}
+.page-title {
+  cursor: pointer;
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 123.18%;
+  color: #ffffff;
+  margin-left: 10px;
+  max-width: 150px;
+}
+.nav {
+  display: flex;
+  align-items: center;
+  gap: 10px 20px;
+  flex-wrap: wrap;
+}
+.nav-item {
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 123.18%;
+  color: #f3fcff;
+  cursor: pointer;
+  transition: all 0.5s ease;
+  margin: 5px 0;
+}
+.nav-item:hover {
+  color: #001531;
+}
+.active {
+  color: #001531;
+}
+.burger-nav {
+  margin-left: 8px;
+  margin-top: 10px;
+}
+.nav-logo-bock {
+  display: flex;
+  justify-content: space-between;
+  padding: 6px 0;
+}
+.burger-icon {
+  cursor: pointer;
+  width: 35px;
+  height: 35px;
+  margin-top: 10px;
+}
+.burger-open-icon {
+  background: url("../../../../assets/icons/charm_menu-hamburger.png") no-repeat;
+}
+.burger-close-icon {
+  background: url("../../../../assets/icons/ep_close-bold.png") no-repeat;
+}
+.switch-burger {
+  display: flex;
+  gap: 5px;
+}
+.burger-nav-items {
+  padding: 10px 0;
+}
+.language-auth {
+  display: flex;
+  flex-wrap: wrap-reverse;
+  justify-content: space-between;
+  gap: 10px;
+}
+
+.loggedin,
+.logout {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  // text-align: center;
+  gap: 0 5px;
+}
