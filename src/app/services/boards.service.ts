@@ -29,16 +29,18 @@ export class BoardsService {
       // this.boards = data.filter((currentBoard) => {
       this.loading = false;
       this.boards = data;
-      // return currentBoard.owner === this.storageService.getUserData().id;
+      //   return currentBoard.owner === this.storageService.getUserData().id;
       // });
     });
   }
   createBoard(newBoard: Iboard) {
     const user = JSON.parse(localStorage.getItem(userKey) as string);
+    console.log(user.id);
+
     this.http
       .post(`${baseUrl}boards`, {
         title: newBoard.title,
-        owner: user ? user.id : '',
+        owner: user ? user.token : '',
         users: [],
       })
       .subscribe((data: any) => {
@@ -47,7 +49,6 @@ export class BoardsService {
   }
 
   getBoardTitleById(id: string) {
-    // console.log(this.boards);
     return this.boards.find((el) => el._id === id);
   }
 }

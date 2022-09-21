@@ -1,6 +1,7 @@
 import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { ToastrService } from 'ngx-toastr';
+import { userKey } from 'src/app/core/constants/authconstants';
 import { BoardsService } from 'src/app/services/boards.service';
 import { Iboard } from 'src/app/shared/interfaces/Iboard';
 
@@ -29,7 +30,13 @@ export class CreateBoardFormComponent implements OnInit {
     this.onCancel.emit(true);
   }
   createNewBoard() {
+    // const user = JSON.parse(localStorage.getItem(userKey) as string);
+    // console.log('user: ', user);
+
     const newBoard: Iboard = { ...this.newBoardForm.value };
+    // newBoard.owner = '';
+    // console.log(newBoard);
+
     this.boardsService.createBoard(newBoard);
     this.newBoardForm.reset();
     this.onSubmit.emit(true);
